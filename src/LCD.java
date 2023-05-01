@@ -12,15 +12,49 @@ public class LCD {
     final static char midRight = 9508;
 
     public static void main(String[] args) {
-        printBoxLine("Hello there", 10);
+        //printBoxLine("Welcome to Stamford LCD Library Demo", 10);
+        LCD.printBoxLine("Welcome to Stamford LCD Library Demo", 2);
+        GotoXY(3, 0);
+        System.out.println("| |");
+        LCD.printBoxLine("Select a Function (0-3)", 2);
+        GotoXY(4, 0);
+
+        GotoXY(5, 0);
+        System.out.print(midLeft);
+        for (int i = 0; i < 78; i++) {
+            System.out.print(dash);
+        }
+        System.out.print(midRight);
+        GotoXY(6, 0);
+        System.out.println("| |");
+
+        invertColor();
+        GotoXY(7, 0);
+        LCD.printBoxLine("1. Login", 0);
+        GotoXY(8, 0);
+        normalColor();
+        LCD.printBoxLine("2. Restart", 0);
+        GotoXY(9, 0);
+        LCD.printBoxLine("3. Shutdown", 0);
+        GotoXY(10, 0);
+        LCD.printBoxLine("0. Go back to previous menu.", 0);
+        GotoXY(11, 0);
+        System.out.print(bottomLeft);
+        for (int i = 0; i < 78; i++) {
+            System.out.print(dash);
+        }
+        System.out.print(bottomRight);
+        GotoXY(12, 0);
     }
 
+    //Task 1
     public static void printSpace(int n) {
         for (int i = 0; i <= n; i++) {
             System.out.print("");
         }
     }
 
+    //Task 2
     public static void printBoxLine(String text, int alignment) {
         int textLength = text.length();
         int padding;
@@ -28,11 +62,11 @@ public class LCD {
         if (textLength % 2 == 0) {
             padding = (80 - (6 + textLength)) / 2;
             isEven = true;
-            System.out.println("Padding value: " + padding + "\n" + isEven);
+            //System.out.println("Padding value: " + padding + "\n" + isEven);
         } else {
             padding = (80 - (6 + textLength + 1)) / 2;
             isEven = false;
-            System.out.println("Padding value: " + padding + "\n" + isEven);
+            //System.out.println("Padding value: " + padding + "\n" + isEven);
         }
 
         switch (alignment) {
@@ -72,7 +106,54 @@ public class LCD {
 
     public static void showMainMenu() {
         //clearScreen();
-        //Preguntar al usuario que introduzca al usuario un intiger (100) tiene que calcular todos los the even number between 1 to the user number
-        //Sumar todas las ood numbers ()
+        GotoXY(1, 1);
+        System.out.println(topLeft);
+        for (int i = 0; i < 78; i++) {
+            System.out.print(dash);
+        }
+        System.out.print(topRight);
+        GotoXY(2, 0);
+
+        LCD.printBoxLine("Welcome to Stamford LCD Library Demo", 2);
+        GotoXY(3, 0);
+        System.out.println("| |");
+        LCD.printBoxLine("Select a Function (0-3)", 2);
+        GotoXY(4, 0);
+
+        GotoXY(5, 0);
+        System.out.print(midLeft);
+        for (int i = 0; i < 78; i++) {
+            System.out.print(dash);
+        }
+        System.out.print(midRight);
+        GotoXY(6, 0);
+        System.out.println("| |");
+
+        invertColor();
+        GotoXY(7, 0);
+        LCD.printBoxLine("1. Login", 0);
+        GotoXY(8, 0);
+        normalColor();
+        LCD.printBoxLine("2. Restart", 0);
+        GotoXY(9, 0);
+        LCD.printBoxLine("3. Shutdown", 0);
+        GotoXY(10, 0);
+        LCD.printBoxLine("0. Go back to previous menu.", 0);
+        GotoXY(11, 0);
+        System.out.print(bottomLeft);
+        for (int i = 0; i < 78; i++) {
+            System.out.print(dash);
+        }
+        System.out.print(bottomRight);
+        GotoXY(12, 0);
+    }
+
+    private static void normalColor() {
+    }
+
+    private static void invertColor() {
+    }
+
+    private static void GotoXY(int i, int i1) {
     }
 }
